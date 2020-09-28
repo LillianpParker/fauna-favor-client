@@ -5,6 +5,11 @@ import './App.css';
 function App () {
     return (
       <div className="App">
+        <div class="container">
+        <header>
+          <h1>Fauna Favor: Endangered Species Edition</h1>
+        </header>
+        </div>
         <ul class="cb-slideshow">
         <li><span>Image 01</span><div><h3>·Kakapo·</h3></div></li>
             <li><span>Image 02</span><div><h3>·Ploushare·Tortoise·</h3></div></li>

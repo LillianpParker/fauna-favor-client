@@ -5,6 +5,34 @@ ul{
   list-style-type: none;
 }
 
+.container > header{
+  z-index: 1;
+	padding: 30px 30px 10px 20px;
+	margin: 0px 20px 10px 20px;
+	position: relative;
+	display: block;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+    text-align: left;
+}
+.container > header h1{
+	/* font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif; */
+	font-size: 35px;
+	line-height: 35px;
+	position: relative;
+	font-weight: 400;
+	color: rgba(169,3,41, 0.8);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    padding: 0px 0px 5px 0px;
+}
+.container > header h2, p.info{
+	font-size: 30px;
+	font-style: italic;
+	color: rgba(169,3,41, 0.8);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+}
+
+
+/* Animation Below */
 .cb-slideshow,
 .cb-slideshow:after {
     position: fixed;
