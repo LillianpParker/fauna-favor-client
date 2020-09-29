@@ -1,23 +1,30 @@
-import React from 'react';
-import Animals from './components/Animal.js'
+import React, { useState, useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import AnimalList from './components/AnimalList/AnimalList.js'
+import Landing from './components/Landing/Landing.js'
+import Navbar from './components/Navbar/Navbar.js'
 import './App.css';
 
 function App () {
+//   const [formInputs, updateFormInputs] = useState ({
+
+//   });
+//   const [animals, setAnimals] = useState([])
+
+//   const getAnimals = async () => {
+//     try {
+//       const response = await fetch('http://localhost3001')
+//       const data = await response.json()
+//       console.log(data)
+//       setAnimals(data)
+//     } catch (error) {
+//       console.error(error)
+//     }
+//   }
     return (
       <div className="App">
-        <div class="container">
-        <header>
-          <h1>Fauna Favor: Endangered Species Edition</h1>
-        </header>
-        </div>
-        <ul class="cb-slideshow">
-        <li><span>Image 01</span><div><h3>·Kakapo·</h3></div></li>
-            <li><span>Image 02</span><div><h3>·Ploushare·Tortoise·</h3></div></li>
-            <li><span>Image 03</span><div><h3>·Vaquita·</h3></div></li>
-            <li><span>Image 04</span><div><h3>·Orinoco·Crocodile·</h3></div></li>
-            <li><span>Image 05</span><div><h3>·Spix·Macaw·</h3></div></li>
-            <li><span>Image 06</span><div><h3>·Saola·</h3></div></li>
-        </ul>
+        <Navbar/>
+        <Landing/>
       </div>
     );
 }

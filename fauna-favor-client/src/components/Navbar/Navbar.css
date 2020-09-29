@@ -1,0 +1,10 @@
+.NavBar{
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-shadow: 1px 1px 1px black;
+    color: white;
+    margin: 0px;
+}
