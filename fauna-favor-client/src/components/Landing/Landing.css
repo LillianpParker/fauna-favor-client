@@ -7,13 +7,105 @@ h1{
   body{
       background-color: black;
   }
-  
-  .container > header{
+header{
+    text-align: center;
+}
+.title{
     z-index: 1;
+    position: fixed;
+    display: block;
+    width: 100%;
+  }
+  /* Sign Ups */
+#signUp{
+    z-index: 1;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.7);
+    margin-top: 10%;
+  }
+* {box-sizing: border-box}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+
+
+
+
+/* Background */
+  .container{
+      z-index: 0;
+  }
+  .container > header{
       padding: 30px 30px 10px 20px;
       margin: 0px 20px 10px 20px;
-      position: relative;
-      display: block;
       text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
       text-align: left;
   }
@@ -23,15 +115,15 @@ h1{
       line-height: 35px;
       position: relative;
       font-weight: 400;
-      color: rgba(169,3,41, 0.8);
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+      color: ghostwhite;
+      text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
       padding: 0px 0px 5px 0px;
   }
   .container > header h2, p.info{
       font-size: 30px;
       font-style: italic;
-      color: rgba(169,3,41, 0.8);
-      text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
+      color: ghostwhite;
+      text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
   }
   
   
@@ -87,7 +179,8 @@ h1{
       font-size: 100px;
       padding: 0;
       line-height: 50px;
-      color: rgba(169,3,41, 0.8);
+      color: ghostwhite;
+      text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
   }
   .cb-slideshow li:nth-child(1) span { background-image: url(../../images/1.jpg) }
   .cb-slideshow li:nth-child(2) span {

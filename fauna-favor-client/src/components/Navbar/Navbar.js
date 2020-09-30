@@ -2,24 +2,19 @@ import React from 'react';
 import "./Navbar.css";
 
 function Navbar(props) {
-    let navBarItems = [
-        <div>
-            <ul>
-                <li key={1}>
-                    <a className="menu" href='/landing'>Home</a>
-                </li>
-                <li key={2}>
-                    <a className="menu" href='/animallist'>Animals</a>
-                </li>
-            </ul>
-        </div>
-    ]
     return (
-        <div className="Nav">
-            <nav>
-                <ul className="NavBar"> {navBarItems} 
-                </ul>
-            </nav>
+        <div>
+        <div id="navbar"> 
+        <ul> 
+            <li><a href="/">Home</a></li> 
+            <li><a href="/animals">Animals</a></li> 
+            <li><a href="/signup">Sign Up</a></li> 
+            <li><a href="/signin">Sign In</a></li> 
+        </ul> 
+        </div> 
+        <div>
+        <hr className="line"/>  
+        </div>
         </div>
     )}
 
