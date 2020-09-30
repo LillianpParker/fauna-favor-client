@@ -7,29 +7,37 @@ import SignInForm from './components/SignInForm/SignInForm.js'
 import SignUpForm from './components/SignUpForm/SignUpForm.js'
 import './App.css';
 
-function App () {
-//   const [formInputs, updateFormInputs] = useState ({
+function App() {
+  //   const [formInputs, updateFormInputs] = useState ({
 
-//   });
-//   const [animals, setAnimals] = useState([])
+  //   });
+  const [animals, setAnimals] = useState([])
 
-//   const getAnimals = async () => {
-//     try {
-//       const response = await fetch('http://localhost3001')
-//       const data = await response.json()
-//       console.log(data)
-//       setAnimals(data)
-//     } catch (error) {
-//       console.error(error)
-//     }
-//   }
-    return (
-      <HashRouter>
+  const getAnimals = async () => {
+    try {
+      const response = await fetch('http://localhost:3000/animals')
+      const data = await response.json()
+      console.log(data)
+      setAnimals([data])
+    } catch (error) {
+      console.error(error)
+    }
+  }
+  useEffect(
+    () => {
+      (
+        async function () {
+          await getAnimals();
+        }
+      )()
+    }, [])
+  return (
+    <HashRouter>
       <div className="App">
-      <Navbar 
-      // isLoggedIn={isLoggedIn}
-      />
-      {/* <div className="body">
+        <Navbar
+        // isLoggedIn={isLoggedIn}
+        />
+        {/* <div className="body">
         <Switch>
           <Route
             path="/signup"
@@ -65,38 +73,39 @@ function App () {
               );
             }}
           /> */}
-          <Route
-            path="/"
-            render={() => {
-              return (
-                <Landing
-               />
-              )
-            }}
-          />
-          <Route
-            path="/signup"
-            render={() => {
-              return (
-                <SignUpForm
-               />
-              )
-            }}
-          />
-          <Route
-            path="/signin"
-            render={() => {
-              return (
-                <SignInForm
-               />
-              )
-            }}
-          />
+        <Route
+          path="/"
+          render={() => {
+            return (
+              <Landing
+              />
+            )
+          }}
+        />
+        <AnimalList animals={animals}/>
+        <Route
+          path="/signup"
+          render={() => {
+            return (
+              <SignUpForm
+              />
+            )
+          }}
+        />
+        <Route
+          path="/signin"
+          render={() => {
+            return (
+              <SignInForm
+              />
+            )
+          }}
+        />
         {/* </Switch> */}
         {/* </div> */}
-        </div>
-      </HashRouter>
-    );
+      </div>
+    </HashRouter>
+  );
 }
 
 export default App;

@@ -2,8 +2,8 @@ import React from 'react';
 import "./SignUpForm.css";
 
 function SignUpForm(props) {
-    return (
-<div id="signUp">
+    return (    
+        <div id="signUp">
                 <form action="action_page.php">
                     <div class="container">
                         <h1>Sign Up</h1>
