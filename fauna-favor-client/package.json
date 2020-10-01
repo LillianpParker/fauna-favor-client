@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@okta/okta-auth-js": "^4.0.2",
-    "@okta/okta-react": "^1.2.0",
+    "@okta/okta-react": "^1.2.3",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -12,7 +12,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-native-google-image-search": "^0.1.0",
-    "react-router-dom": "^4.3.1",
+    "react-router-dom": "^5.0.1",
     "react-scripts": "3.4.3"
   },
   "scripts": {
