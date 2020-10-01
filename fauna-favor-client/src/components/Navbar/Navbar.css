@@ -7,7 +7,8 @@
     background-color: #000; 
     position: fixed;
     display: block;
-    width: 100%;
+	width: 100%;
+	top: 0px !important;
 	} 
  
 #navbar ul li {  

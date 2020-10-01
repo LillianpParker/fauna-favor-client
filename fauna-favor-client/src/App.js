@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Route, Switch, HashRouter } from 'react-router-dom';
+import React, { useState, useEffect, Link } from 'react';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import AnimalList from './components/AnimalList/AnimalList.js'
 import Landing from './components/Landing/Landing.js'
 import Navbar from './components/Navbar/Navbar.js'
 import SignInForm from './components/SignInForm/SignInForm.js'
 import SignUpForm from './components/SignUpForm/SignUpForm.js'
 import './App.css';
+
 
 function App() {
   //   const [formInputs, updateFormInputs] = useState ({
@@ -32,7 +33,7 @@ function App() {
       )()
     }, [])
   return (
-    <HashRouter>
+    <Router>
       <div className="App">
         <Navbar
         // isLoggedIn={isLoggedIn}
@@ -74,37 +75,30 @@ function App() {
             }}
           /> */}
         <Route
-          path="/"
+          exact path="/"
+          component={Landing}
+        />
+        <Route
+          path="/animals"
           render={() => {
             return (
-              <Landing
+              <AnimalList animals={animals}
               />
-            )
-          }}
-        />
-        <AnimalList animals={animals}/>
+              )
+            }}
+          />
         <Route
           path="/signup"
-          render={() => {
-            return (
-              <SignUpForm
-              />
-            )
-          }}
+          component={SignUpForm}
         />
         <Route
           path="/signin"
-          render={() => {
-            return (
-              <SignInForm
-              />
-            )
-          }}
+          component={SignInForm}
         />
         {/* </Switch> */}
         {/* </div> */}
       </div>
-    </HashRouter>
+    </Router>
   );
 }
 
