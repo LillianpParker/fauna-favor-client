@@ -1,0 +1,34 @@
+.fav-btn{
+    width: 30px !important;
+    background-color: red;    
+}
+.favorites{
+    background-color: rgba(0,0,0, 0.6) ;
+    width: 60%;
+    padding: 15px;
+    position: fixed;
+    display: block;
+    top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 70%;
+    color: white;
+    overflow-x: scroll;
+}
+.favTitle{
+    text-align: center;
+    text-decoration: underline;
+}
+
+::-webkit-scrollbar {
+    width: 10px !important;
+  }
+::-webkit-scrollbar-track {
+    background: transparent;
+    border: 1px solid white;
+    
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(169,3,41, 0.8);;
+  }
+  

@@ -28,10 +28,10 @@ export default withAuth(
           username: this.state.username,
           password: this.state.password
         })
-        .then(res =>
+        .then(res => {
           this.setState({
             sessionToken: res.sessionToken
-          })
+          })}
         )
         .catch(err => {
           this.setState({ error: err.message });
@@ -59,7 +59,6 @@ export default withAuth(
 
       return (
         <form onSubmit={this.handleSubmit}>
-          {errorMessage}
           <div className="form-element">
             <label>Username:</label>
             <input
@@ -78,6 +77,7 @@ export default withAuth(
               value={this.state.password}
               onChange={this.handlePasswordChange}
             />
+          {errorMessage}
           </div>
           <input id="submit" type="submit" value="Submit" />
         </form>

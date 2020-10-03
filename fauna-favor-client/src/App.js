@@ -8,6 +8,7 @@ import RegistrationForm from './components/auth/RegistrationForm';
 import config from './app.config';
 import LoginPage from './components/auth/LoginPage';
 import AnimalList from './components/animals/AnimalList'
+import FavoriteAnimal from './components/favorites/FavoriteAnimal'
 import './App.css';
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
       console.error(error)
     }
   }
+
 
   const [search, setSearch] = useState('')
 
@@ -41,6 +43,12 @@ export default function App() {
     setSearch(event.target.value)
   }
 
+  const favouriteAnimal = (event) => {
+    // get the animal the user favourited
+    // send POST to favourites route in backend
+  }
+
+
   return (
     <div className="App">
       <Navigation />
@@ -60,6 +68,7 @@ export default function App() {
             />
           </div>
         )} />
+        <Route exact path="/favorites" component={FavoriteAnimal}/>
         {/* <SecureRoute path="/animals" component={AnimalList} /> */}
       </main>
     </div>

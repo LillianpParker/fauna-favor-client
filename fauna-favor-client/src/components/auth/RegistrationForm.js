@@ -90,8 +90,8 @@ export default withAuth(
       return (
         <form onSubmit={this.handleSubmit}>
           <div className="form-element">
-            <label>Email:</label>
-            <input
+            <label>Email:</label><br/>
+            <input className="email-box"
               type="email"
               id="email"
               value={this.state.email}
