@@ -21,14 +21,25 @@ export default function App() {
       console.error(error)
     }
   }
-  useEffect(
-    () => {
-      (
-        async function () {
-          await getAnimals();
-        }
-      )()
-    }, [])
+
+  const [search, setSearch] = useState('')
+
+  const handleKeyDown = async(event) => {
+    if (event.key === 'Enter') {
+      try {
+        const response = await fetch(`http://localhost:3000/animals/search/${search}`)
+        const data = await response.json()
+        console.log(data)
+        setAnimals(data)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  }
+
+  const searchOnChange = (event) => {
+    setSearch(event.target.value)
+  }
 
   return (
     <div className="App">
@@ -42,11 +53,13 @@ export default function App() {
         <Route path="/implicit/callback" component={ImplicitCallback} />
         <Route path="/register" component={RegistrationForm} />
         <Route path="/animals" render={() => (
-            <AnimalList
-              animals={animals}
-              // search={search}
+          <div>
+            <input class="search" type="text" placeholder="Search for an animal here" onKeyDown={handleKeyDown} value={search} onChange={searchOnChange}></input>
+            <button class="randomAnimal" onClick={getAnimals}>Give me a Random Animal!</button>
+            <AnimalList animals={animals}
             />
-          )}/>
+          </div>
+        )} />
         {/* <SecureRoute path="/animals" component={AnimalList} /> */}
       </main>
     </div>

@@ -2,13 +2,9 @@ import React from 'react';
 import "./AnimalList.css"
 
 export default function AnimalList(props) {
-    function refreshPage(){
-        window.location.reload();
-    }
     return (
         <div class="bg" >
-            <input class="search" type="text" placeholder="Search for an animal here"></input>
-            <button class="randomAnimal" onClick={refreshPage}>Give me a Random Animal!</button>
+    
             <div class="list">
                 {props.animals.map(animal => {
                     console.log(animal)
