@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { withAuth } from '@okta/okta-react';
+import "./Navigation.css"
 
 export default withAuth(
   class Navigation extends React.Component {
@@ -27,6 +28,12 @@ export default withAuth(
       const authNav = this.state.authenticated ? (
         <ul className="auth-nav">
           <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+              <Link to="/animals">Animals</Link>
+            </li>
+          <li>
             <a
               href="javascript:void(0)"
               onClick={() => this.props.auth.logout()}
@@ -34,34 +41,42 @@ export default withAuth(
               Logout
             </a>
           </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
         </ul>
       ) : (
-        <ul className="auth-nav">
-          <li>
-            <a
-              href="javascript:void(0)"
-              onClick={() => this.props.auth.login()}
-            >
-              Login
-            </a>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
-        </ul>
-      );
-      return (
-        <nav>
-          <ul>
+          <ul className="auth-nav" id="navbar">
             <li>
               <Link to="/">Home</Link>
             </li>
-            {authNav}
+            <li>
+              <Link to="/animals">Animals</Link>
+            </li>
+            <li>
+              <Link class="name"to="#">Fauna Favor</Link>
+            </li>
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+            <li>
+              <a
+                href="javascript:void(0)"
+                onClick={() => this.props.auth.login()}
+              >
+                Login
+            </a>
+            </li>
           </ul>
-        </nav>
+        );
+      return (
+        <div id="navbar">
+          <nav>
+            <ul>
+              <li>
+                {authNav}
+              </li>
+            </ul>
+          </nav>
+          <hr class="line"/>
+        </div>
       );
     }
   }

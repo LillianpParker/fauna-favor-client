@@ -1,5 +1,5 @@
 import React from 'react';
-import OktaAuth from '@okta/okta-auth-js';
+import { OktaAuth } from '@okta/okta-auth-js';
 import { withAuth } from '@okta/okta-react';
 
 import config from '../../app.config';
@@ -15,7 +15,7 @@ export default withAuth(
         password: '',
         sessionToken: null
       };
-      this.oktaAuth = new OktaAuth({ url: config.url });
+      this.oktaAuth = new OktaAuth(config);
       this.checkAuthentication = this.checkAuthentication.bind(this);
       this.checkAuthentication();
 
@@ -61,16 +61,22 @@ export default withAuth(
         body: JSON.stringify(this.state)
       })
         .then(user => {
+          console.log(user)
           this.oktaAuth
             .signIn({
               username: this.state.email,
               password: this.state.password
             })
-            .then(res =>
+            .then(res => {
+              console.log("ppopopop")
               this.setState({
                 sessionToken: res.sessionToken
               })
-            );
+            }
+            ).catch(err => {
+              console.log(err)
+              console.log("pafasfsafsafsafsaf")
+            });
         })
         .catch(err => console.log);
     }

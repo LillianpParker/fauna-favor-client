@@ -1,6 +1,7 @@
 import React from 'react';
-import OktaAuth from '@okta/okta-auth-js';
+import { OktaAuth } from '@okta/okta-auth-js'
 import { withAuth } from '@okta/okta-react';
+import "./LoginForm.css"
 
 export default withAuth(
   class LoginForm extends React.Component {
@@ -13,7 +14,7 @@ export default withAuth(
         password: ''
       };
 
-      this.oktaAuth = new OktaAuth({ url: props.baseUrl });
+      this.oktaAuth = new OktaAuth(props.config);
 
       this.handleSubmit = this.handleSubmit.bind(this);
       this.handleUsernameChange = this.handleUsernameChange.bind(this);
