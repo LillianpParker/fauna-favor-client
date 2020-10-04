@@ -53,7 +53,7 @@ export default function App() {
     <div className="App">
       <Navigation />
       <main>
-        <Route path="/" exact component={Landing} />
+        <Route path="/landing" exact component={Landing} />
         <Route
           path="/login"
           render={() => <LoginPage config={config} />}
