@@ -15,7 +15,7 @@ export default function App() {
   const [animals, setAnimals] = useState([])
   const getAnimals = async () => {
     try {
-      const response = await fetch('http://localhost:3000/animals')
+      const response = await fetch('https://fauna-favor-api.herokuapp.com/animals')
       const data = await response.json()
       setAnimals([data])
     } catch (error) {
@@ -29,7 +29,7 @@ export default function App() {
   const handleKeyDown = async(event) => {
     if (event.key === 'Enter') {
       try {
-        const response = await fetch(`http://localhost:3000/animals/search/${search}`)
+        const response = await fetch(`https://fauna-favor-api.herokuapp.com/animals/search/${search}`)
         const data = await response.json()
         console.log(data)
         setAnimals(data)

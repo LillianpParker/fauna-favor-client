@@ -15,7 +15,7 @@ export default function AnimalList(props) {
             body: JSON.stringify(animal)
         }
         
-        fetch('http://localhost:3000/favorites', favs)
+        fetch('https://fauna-favor-api.herokuapp.com/favorites', favs)
             .then(response => response.json())
             .then(animal => {
                 console.log(animal)
