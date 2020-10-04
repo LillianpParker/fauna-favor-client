@@ -1,6 +1,6 @@
 .fav-btn{
     width: 30px !important;
-    background-color: red;    
+    background-color: red;   
 }
 .favorites{
     background-color: rgba(0,0,0, 0.6) ;
@@ -14,6 +14,7 @@
     height: 70%;
     color: white;
     overflow-x: scroll;
+    text-align: center;
 }
 .favTitle{
     text-align: center;
