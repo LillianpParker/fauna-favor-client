@@ -7,7 +7,7 @@ function FavoriteAnimal(props) {
     const [favorites, setFavorites] = useState([])
     const getFavorites = async () => {
         try {
-            const response = await fetch('http://localhost:3000/favorites')
+            const response = await fetch('https://fauna-favor-api.herokuapp.com/favorites')
             const data = await response.json()
             setFavorites(data)
         } catch (error) {

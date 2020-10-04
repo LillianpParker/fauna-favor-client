@@ -43,17 +43,12 @@ export default function App() {
     setSearch(event.target.value)
   }
 
-  const favouriteAnimal = (event) => {
-    // get the animal the user favourited
-    // send POST to favourites route in backend
-  }
-
 
   return (
     <div className="App">
       <Navigation />
       <main>
-        <Route path="/landing" exact component={Landing} />
+        <Route exact path="/" component={Landing} />
         <Route
           path="/login"
           render={() => <LoginPage config={config} />}
