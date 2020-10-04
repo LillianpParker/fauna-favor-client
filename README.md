@@ -1,3 +1,15 @@
+Fauna Favor was made with learning in mind. On our website, people can learn about so many different animals, from insects, to marine life. They can favorite them to view later, search for a specific animal, or opt for a random one if they're feeling particularly daring. 
+
+Live Link: https://fauna-favor-client.herokuapp.com/
+
+This app was made with:
+Rails
+React (with React Router)
+The NatureServe API 
+MongoDB
+and has a skeleton for OKTA Authentication (unfortunately not quite fully integreated yet)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
