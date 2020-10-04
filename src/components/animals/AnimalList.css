@@ -22,7 +22,7 @@
     text-align: center;
     color: white;
     width: 50%;
-    height: 600px;
+    height: 500px !important;
     position: fixed;
     display: block;
     margin-top: 12%;
